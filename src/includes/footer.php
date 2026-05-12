@@ -15,6 +15,8 @@
       <script src="../js/jquery.min.js"></script>
       <script src="../js/popper.min.js"></script>
       <script src="../js/bootstrap.min.js"></script>
+
+      <script src ="../js/NumeroALetras.js"></script>
       <!-- wow animation -->
       <script src="../js/animate.js"></script>
       <!-- select country -->

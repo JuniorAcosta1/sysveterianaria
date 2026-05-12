@@ -1,9 +1,8 @@
 <?php 
 include_once(__DIR__ . "/../includes/header.php");
 ?>
- <!-- SELECT2 -->
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
- <div class="midde_cont">
+
+<div class="midde_cont">
    <div class="container-fluid">
        <!-- TITULO -->
       <div class="row column_title">
@@ -11,21 +10,21 @@ include_once(__DIR__ . "/../includes/header.php");
              <div class="page_title d-flex justify-content-between align-items-center">
                 <div>
                   <h2>
-                     <i class="fa fa-paw text-primary"></i>
-                     Registro de Mascotas
+                     <i class="fa fa-shopping-cart text-primary"></i>
+                     Stock
                   </h2>
                    <p class="text-muted mb-0">
-                     Sistema Veterinaria
+                     Registro de Stock - Sistema Veterinaria
                   </p>
                </div>
-                <a href="mascotas.php" class="btn btn-outline-secondary">
+                <a href="stock.php" class="btn btn-outline-secondary">
                   <i class="fa fa-arrow-left"></i>
                   Volver
                </a>
              </div>
           </div>
       </div>
-       <!-- FORM -->
+       <!-- FORMULARIO -->
       <div class="row">
          <div class="col-md-12">
              <div class="white_shd full margin_bottom_30">
@@ -33,14 +32,14 @@ include_once(__DIR__ . "/../includes/header.php");
                <div class="full graph_head">
                    <div class="heading1 margin_0">
                       <h2>
-                        <i class="fa fa-user-md text-success"></i>
-                        Nueva Mascota
+                        <i class="fa fa-plus text-success"></i>
+                        Nuevo Stock
                      </h2>
                    </div>
                 </div>
                 <!-- BODY -->
                <div class="full padding_infor_info">
-                   <form id="form_mascota">
+                   <form id="form_stock">
                       <!-- CLIENTE -->
                      <div class="row">
                          <div class="col-md-12 mb-3">
@@ -78,13 +77,13 @@ include_once(__DIR__ . "/../includes/header.php");
                            </div>
                          </div>
                       </div>
-                      <!-- DETALLE MASCOTAS -->
+                      <!-- DETALLE STOCK -->
                      <div class="row mt-4">
                          <div class="col-md-12 mb-3 d-flex justify-content-between align-items-center">
                             <div>
-                               <h5 class="text-success mb-0"><i class="fa fa-paw"></i>Mascotas</h5>
+                               <h5 class="text-success mb-0"><i class="fa fa-paw"></i>Stock</h5>
                             </div>
-                            <button type="button"class="btn btn-primary"id="btn_agregar"><i class="fa fa-plus"></i>Agregar Mascota</button>
+                            <button type="button"class="btn btn-primary"id="btn_agregar"><i class="fa fa-plus"></i>Agregar Stock</button>
                          </div>
                       </div>
                       <!-- TABLA -->
@@ -93,15 +92,12 @@ include_once(__DIR__ . "/../includes/header.php");
                             <thead class="thead-dark">
                                <tr>
                                     <th>Nombre</th>
-                                    <th>Especie</th>
-                                    <th>Raza</th>
-                                    <th>Sexo</th>
-                                    <th>Edad</th>
-                                    <th>Peso</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
                                     <th width="80">Acción</th>
                                </tr>
                             </thead>
-                            <tbody id="detalle_mascotas">
+                            <tbody id="detalle_stock">
                             </tbody>
                          </table>
                       </div>
@@ -146,59 +142,87 @@ $('#cliente_id').select2({
  });
  // AL SELECCIONAR CLIENTE
 $('#cliente_id').on('select2:select', function (e) {
-   let data = e.params.data;
-   $('#info_cliente').show();
-   $('#cliente_nombre').html(data.nombre);
+    let data = e.params.data;
+    $('#info_cliente').show();
+    $('#cliente_nombre').html(data.nombre);
    $('#cliente_documento').html(data.documento);
    $('#cliente_telefono').html(data.telefono);
-});
-// AGREGAR FILA
+ });
+ // AGREGAR FILA
 $('#btn_agregar').click(function(){
     let fila = `
       <tr>
-         <td>
-            <input type="text"class="form-control"name="mascota_nombre[]"required>
+          <td>
+            <input 
+               type="text"
+               class="form-control"
+               name="mascota_nombre[]"
+               required
+            >
          </td>
-         <td>
-            <select class="form-control"name="mascota_especie[]"required>
-               <option value="">Seleccionar</option>
+          <td>
+             <select 
+            name="mascota_especie[]"
+            required
+            >
+                <option value="">Seleccionar</option>
                <option>Perro</option>
                <option>Gato</option>
                <option>Ave</option>
                <option>Conejo</option>
                <option>Otro</option>
              </select>
+          </td>
+          <td>
+            <input 
+               type="text"
+               class="form-control"
+               name="mascota_raza[]"
+            >
          </td>
-         <td>
-            <input type="text"class="form-control"name="mascota_raza[]">
-         </td>
-         <td>
-            <select class="form-control"name="mascota_sexo[]">
-               <option value="">Seleccionar</option>
+          <td>
+             <select 
+               class="form-control"
+               name="mascota_sexo[]"
+            >
+                <option value="">Seleccionar</option>
                <option>Macho</option>
                <option>Hembra</option>
              </select>
+          </td>
+          <td>
+            <input 
+               type="number"
+               class="form-control"
+               name="mascota_edad[]"
+               min="0"
+            >
          </td>
-         <td>
-            <input type="number"class="form-control"name="mascota_edad[]"min="0">
+          <td>
+            <input 
+               type="number"
+               class="form-control"
+               name="mascota_peso[]"
+               step="0.1"
+            >
          </td>
-         <td>
-            <input type="number"class="form-control"name="mascota_peso[]"step="0.1">
-         </td>
-         <td class="text-center">
-            <button type="button"class="btn btn-danger btn-sm eliminar">
+          <td class="text-center">
+             <button 
+               type="button"
+               class="btn btn-danger btn-sm eliminar"
+            >
                <i class="fa fa-trash"></i>
             </button>
-         </td>
-      </tr>
+          </td>
+       </tr>
    `;
     $('#detalle_mascotas').append(fila);
  });
-// ELIMINAR FILA
+ // ELIMINAR FILA
 $(document).on('click', '.eliminar', function(){
     $(this).closest('tr').remove();
-});
-// SUBMIT
+ });
+ // SUBMIT
 $('#form_mascota').submit(function(e){
    e.preventDefault();
    let boton = $('#btn_guardar');
@@ -210,7 +234,7 @@ $('#form_mascota').submit(function(e){
       boton.addClass('btn-success');
     }, 1500);
  });
-</script>
-<?php
-   include_once '../includes/footer.php';
+ </script>
+ <?php
+include_once '../includes/footer.php';
 ?>

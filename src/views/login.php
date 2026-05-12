@@ -11,16 +11,16 @@
       <!-- site metas -->
       <title>Login</title>
       <!-- site icon -->
-      <link rel="icon" href="../images/fevicon.png" type="image/png" />
+      <link rel="icon" href="../../images/fevicon.png" type="image/png" />
       <!-- bootstrap css -->
-      <link rel="stylesheet" href="../src/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="../css/bootstrap.min.css" />
       <!-- site css -->
-      <link rel="stylesheet" href="../src/css/style.css" />
-      <link rel="stylesheet" href="../src/css/responsive.css" />
-      <link rel="stylesheet" href="../src/css/colors.css" />
-      <link rel="stylesheet" href="../src/css/bootstrap-select.css" />
-      <link rel="stylesheet" href="../src/css/perfect-scrollbar.css" />
-      <link rel="stylesheet" href="../src/css/custom.css" />
+      <link rel="stylesheet" href="../css/style.css" />
+      <link rel="stylesheet" href="../css/responsive.css" />
+      <link rel="stylesheet" href="../css/colors.css" />
+      <link rel="stylesheet" href="../css/bootstrap-select.css" />
+      <link rel="stylesheet" href="../css/perfect-scrollbar.css" />
+      <link rel="stylesheet" href="../css/custom.css" />
 
       <!-- font awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -68,7 +68,7 @@
 
                   <div class="logo_login">
                      <div class="center">
-                        <img width="210" src="../images/logo/logo.png" alt="#" />
+                        <img width="210" src="../../images/logo/logo.png" alt="#" />
                      </div>
                   </div>
                   <div class="login_form">
@@ -104,15 +104,15 @@
          </div>
       </div>
       <!-- jQuery -->
-      <script src="../src/js/jquery.min.js"></script>
-      <script src="../src/js/popper.min.js"></script>
-      <script src="../src/js/bootstrap.min.js"></script>
+      <script src="../js/popper.min.js"></script>
+      <script src="../js/bootstrap.min.js"></script>
+      <script src="../js/jquery.min.js"></script>
       <!-- wow animation -->
-      <script src="../src/js/animate.js"></script>
+      <script src="../js/animate.js"></script>
       <!-- select country -->
-      <script src="../src/js/bootstrap-select.js"></script>
+      <script src="../js/bootstrap-select.js"></script>
       <!-- nice scrollbar -->
-      <script src="../src/js/perfect-scrollbar.min.js"></script>
+      <script src="../js/perfect-scrollbar.min.js"></script>
       <script>
          var ps = new PerfectScrollbar('#sidebar');
       </script>

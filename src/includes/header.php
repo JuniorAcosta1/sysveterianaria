@@ -62,28 +62,28 @@
                         <ul class="collapse list-unstyled" id="clinica">
                            <li><a href="clientes.php"> <span>Clientes</span></a></li>
                            <li><a href="mascotas.php"> <span>Mascotas</span></a></li>
-                           <li><a href="icons.html">> <span>Consultas</span></a></li>
-                           <li><a href="invoice.html">> <span>Historial clinico</span></a></li>
-                           <li><a href="invoice.html">> <span>Vacunas</span></a></li>
-                           <li><a href="invoice.html">> <span>Cirugias</span></a></li>
-                           <li><a href="invoice.html">> <span>Estudios</span></a></li><!--Labotarios,imagenes -->
+                           <li><a href="icons.html"> <span>Consultas</span></a></li>
+                           <li><a href="invoice.html"> <span>Historial clinico</span></a></li>
+                           <li><a href="invoice.html"> <span>Vacunas</span></a></li>
+                           <li><a href="invoice.html"> <span>Cirugias</span></a></li>
+                           <li><a href="invoice.html"> <span>Estudios</span></a></li><!--Labotarios,imagenes -->
                         </ul>
                      </li>
                      <li>
                         <a href="#comercial" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Comercial</span></a>
                         <ul class="collapse list-unstyled" id="comercial">
-                           <li><a href="general_elements.html">> <span>Productos</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Categorías</span></a></li>
-                           <li><a href="icons.html">> <span>Stock</span></a></li>
-                           <li><a href="invoice.html">> <span>Compras a proveedores</span></a></li>
-                           <li><a href="invoice.html">> <span>Ventas</span></a></li> <!--tipo factura/ticket-->
+                           <li><a href="productos.php"> <span>Productos</span></a></li>
+                           <li><a href="categorias.php"> <span>Categorías</span></a></li>
+                           <li><a href="stock.php"> <span>Stock</span></a></li>
+                           <li><a href="invoice.html"> <span>Compras a proveedores</span></a></li>
+                           <li><a href="invoice.html"> <span>Ventas</span></a></li> <!--tipo factura/ticket-->
                         </ul>
                      </li>
                      <li>
                         <a href="#administracion" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-cog yellow_color"></i> <span>Administración</span></a>
                         <ul class="collapse list-unstyled" id="administracion">
-                           <li><a href="general_elements.html">> <span>Usuarios</span></a></li>
-                           <li><a href="media_gallery.html">> <span>Roles</span></a></li>
+                           <li><a href="general_elements.html"> <span>Usuarios</span></a></li>
+                           <li><a href="media_gallery.html"> <span>Roles</span></a></li>
                         </ul>
                      </li>
                      <li><a href="tables.html"><i class="fa fa-table purple_color2"></i> <span>Ventas</span></a></li>
@@ -148,3 +148,6 @@
                   </nav>
                </div>
                <!-- end topbar -->
+
+
+               
