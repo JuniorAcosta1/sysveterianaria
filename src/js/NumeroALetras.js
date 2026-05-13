@@ -1,14 +1,10 @@
-
-
-
-// NUMEROS A LETRAS
 function numeroALetras(numero) {
 
     numero = parseInt(numero);
 
     const unidades = [
         '',
-        'Uno',
+        'Un',
         'Dos',
         'Tres',
         'Cuatro',
@@ -28,7 +24,7 @@ function numeroALetras(numero) {
         'Quince',
         'Dieciséis',
         'Diecisiete',
-        'Deciocho',
+        'Dieciocho',
         'Diecinueve'
     ];
 
@@ -40,7 +36,7 @@ function numeroALetras(numero) {
         'Cuarenta',
         'Cincuenta',
         'Sesenta',
-        'Cetenta',
+        'Setenta',
         'Ochenta',
         'Noventa'
     ];
@@ -58,33 +54,28 @@ function numeroALetras(numero) {
         'Novecientos'
     ];
 
+    if (numero === 0) return 'Cero';
 
-    if (numero === 0) return 'cero';
+    if (numero === 100) return 'Cien';
 
-    if (numero === 100) return 'cien';
-
-
-    function convertir(n) {
+    function convertirMenorMil(n) {
 
         let texto = '';
 
+        if (n === 100) return 'Cien';
+
         if (n > 100) {
             texto += centenas[Math.floor(n / 100)] + ' ';
-            n = n % 100;
-        } else if (n == 100) {
-            texto += 'Cien ';
+            n %= 100;
         }
 
         if (n >= 10 && n < 20) {
-
             texto += especiales[n - 10];
-
-            return texto;
-
+            return texto.trim();
         }
+
         if (n >= 20) {
 
-            // 21 AL 29
             if (n >= 21 && n <= 29) {
 
                 const veinti = [
@@ -107,51 +98,97 @@ function numeroALetras(numero) {
                 texto += decenas[Math.floor(n / 10)];
 
                 if (n % 10 > 0) {
-
                     texto += ' y ' + unidades[n % 10];
-
                 }
 
             }
 
-        } else {
+        } else if (n > 0) {
 
             texto += unidades[n];
 
         }
 
-        return texto;
+        return texto.trim();
 
     }
 
+    function convertir(n) {
 
-    if (numero < 1000) {
+        if (n < 1000) {
+            return convertirMenorMil(n);
+        }
 
-        return convertir(numero);
+        // MILES
+        if (n < 1000000) {
 
-    }
+            let miles = Math.floor(n / 1000);
+            let resto = n % 1000;
 
-    if (numero < 1000000) {
+            let texto = '';
 
-        let miles = Math.floor(numero / 1000);
-        let resto = numero % 1000;
+            if (miles === 1) {
+                texto = 'Mil';
+            } else {
+                texto = convertirMenorMil(miles) + ' Mil';
+            }
 
-        let textoMiles = '';
+            if (resto > 0) {
+                texto += ' ' + convertirMenorMil(resto);
+            }
 
-        if (miles === 1) {
-
-            textoMiles = 'mil';
-
-        } else {
-
-            textoMiles = convertir(miles) + ' mil';
+            return texto.trim();
 
         }
 
-        return textoMiles + ' ' + convertir(resto);
+        // MILLONES
+        if (n < 1000000000000) {
+
+            let millones = Math.floor(n / 1000000);
+            let resto = n % 1000000;
+
+            let texto = '';
+
+            if (millones === 1) {
+                texto = 'Un Millón';
+            } else {
+                texto = convertir(millones) + ' Millones';
+            }
+
+            if (resto > 0) {
+                texto += ' ' + convertir(resto);
+            }
+
+            return texto.trim();
+
+        }
+
+        // BILLONES
+        if (n < 1000000000000000) {
+
+            let billones = Math.floor(n / 1000000000000);
+            let resto = n % 1000000000000;
+
+            let texto = '';
+
+            if (billones === 1) {
+                texto = 'Un Billón';
+            } else {
+                texto = convertir(billones) + ' Billones';
+            }
+
+            if (resto > 0) {
+                texto += ' ' + convertir(resto);
+            }
+
+            return texto.trim();
+
+        }
+
+        return 'Número demasiado grande';
 
     }
 
-    return numero;
+    return convertir(numero);
 
 }

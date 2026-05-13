@@ -149,19 +149,17 @@ precioInput.addEventListener("input", function () {
 
     // SI ESTA VACIO
     if (valor === '') {
-
-        this.value = '';
-        precioLetras.value = '';
-
-        return;
-
+      this.value = '';
+      precioLetras.value = '';
+      return;
     }
 
-    // FORMATO GS
-    this.value = Number(valor).toLocaleString('es-PY');
+   // FORMATO GS
+   this.value = Number(valor).toLocaleString('es-PY');
 
-    // LETRAS
-    precioLetras.value = numeroALetras(valor) + ' Guaraníes';
+   // LETRAS
+   // precioLetras.value = numeroALetras(valor) + ' Guaraníes';
+   precioLetras.value = numeroALetras(valor);
 
 });
 </script>

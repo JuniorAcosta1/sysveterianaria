@@ -62,7 +62,7 @@
                         <ul class="collapse list-unstyled" id="clinica">
                            <li><a href="clientes.php"> <span>Clientes</span></a></li>
                            <li><a href="mascotas.php"> <span>Mascotas</span></a></li>
-                           <li><a href="icons.html"> <span>Consultas</span></a></li>
+                           <li><a href="consultas.php"> <span>Consultas</span></a></li>
                            <li><a href="invoice.html"> <span>Historial clinico</span></a></li>
                            <li><a href="invoice.html"> <span>Vacunas</span></a></li>
                            <li><a href="invoice.html"> <span>Cirugias</span></a></li>
